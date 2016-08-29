@@ -100,7 +100,8 @@ define automysqlbackup::backup (
   $prebackup                          = '',
   $postbackup                         = '',
   $umask                              = '',
-  $dryrun                             = ''
+  $dryrun                             = '',
+  $mysql_configuration_file           = ''
 ) {
 
   # Ensure array params are arrays
@@ -188,7 +189,8 @@ define automysqlbackup::backup (
     'db_month_names'                    => $db_month_names,
     'db_exclude'                        => $db_exclude,
     'table_exclude'                     => $table_exclude,
-    'backup_local_files'                => $backup_local_files
+    'backup_local_files'                => $backup_local_files,
+    'mysql_configuration_file'          => $mysql_configuration_file
   }
 
   # Last but not least, create the config file
